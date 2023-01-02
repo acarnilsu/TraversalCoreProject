@@ -4,12 +4,13 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace TraversalCoreProject.ViewComponents.Default
 {
-    public class _PopularDestinations:ViewComponent
+    public class _SubAbout:ViewComponent
     {
-        DestinationManager destinationManager = new DestinationManager(new EfDestinationDal());
+        SubAboutManager subAboutManager = new SubAboutManager(new EfSubAboutDal());
+
         public IViewComponentResult Invoke()
         {
-            var values = destinationManager.TGetList();
+            var values=subAboutManager.TGetList();
             return View(values);
         }
     }
