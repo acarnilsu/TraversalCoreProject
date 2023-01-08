@@ -75,7 +75,7 @@
                 </div>
                 <div class="single-post-content">
                     <p class="alphabet mb-4">
-                        <span class="big-letter"></span>@*@Model.Details1*@
+                        <span class="big-letter"></span>@Model.Details1
                     </p>
                     <blockquote class="blockquote my-5">
                         <div class="icon-quote"><span class="fa fa-quote-left" aria-hidden="true"></span></div>
@@ -94,7 +94,7 @@
                     </div>
                     <h3 class="blog-desc-big m-0 mb-lg-4 mb-3">2.Paragraf</h3>
                     <p class="mb-4">
-                        @*@Model.Details2*@
+                        @Model.Details2
                     </p>
 
                     <div class="d-grid left-right mt-5 pb-md-5">
@@ -172,9 +172,11 @@
                     <!--//author-card-->
 
 
-@*                    @await Component.InvokeAsync("_CommentList", new { id = ViewBag.i })
+                    @await Component.InvokeAsync("_CommentList", new{id=ViewBag.i})
 
-                    @await Html.PartialAsync("~/Views/Comment/AddComment.cshtml")*@
+                    @await Component.InvokeAsync("_AddComment")
+                    
+
                     <br /><br />
                 </div>
             </div>
